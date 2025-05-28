@@ -74,6 +74,28 @@ kable(eig.val, format = "latex", booktabs = TRUE,
   kable_styling(latex_options = c("striped", "hold_position"))
 ```
 
+El Análisis de Componentes Principales (ACP) realizado sobre las métricas activas de internacionalización y los indicadores de recursos humanos como variables suplementarias, permite identificar dos dimensiones 
+fundamentales que explican el 85,4% de la variabilidad total en los datos:
+
+
+
+#### Dimensión 1 – Grado de apertura y dinamismo internacional (62,2%)
+
+Esta dimensión resume el eje de *expansión económica internacional*. Las ciudades que obtienen puntajes positivos destacan por:
+
+- Alto Coeficiente de internacionalización: reflejo de una participación activa en redes globales.
+- Elevada Tasa de orientación exportadora: indica una economía volcada hacia el mercado externo.
+- Diversificación de productos exportados: sugiere solidez estructural y menor vulnerabilidad frente a choques externos.
+
+Por otro lado, las ciudades con superávit en la Balanza comercial respecto al PIB tienden a ubicarse en el extremo izquierdo de esta dimensión. Aunque exhiben cuentas externas equilibradas, presentan *menor dinamismo exportador*, lo que podría reflejar un perfil más conservador o dependiente de pocos sectores clave.
+
+#### Dimensión 2 – Cobertura educativa y calidad vs. déficits sociales (23,2%)
+
+Esta dimensión expresa un contraste entre cobertura/calidad educativa y factores demográficos y sociales rezagados. En el polo positivo, se agrupan ciudades que combinan superávit comercial con una alta 
+diversificación de mercados. Estas ciudades reflejan un patrón de estabilidad macroeconómica acompañado de una proyección internacional balanceada. Por el contrario, en el polo negativo se encuentran ciudades 
+con una elevada Tasa de orientación exportadora, pero que enfrentan déficits en áreas como salud, educación o estructura demográfica. Esto sugiere estrategias intensivas en exportaciones, pero sin una base 
+social suficientemente equilibrada, lo cual puede comprometer su sostenibilidad a largo plazo.
+
 ### b) Correlaciones de variables activas
 
 ```{r}
@@ -82,6 +104,21 @@ kable(round(res.pca$var$cor, 3), format = "latex",
       caption = "Correlación de variables activas con los factores") %>%
   kable_styling(latex_options = c("striped", "hold_position"))
 ```
+
+### Dimensión 1 (62,2 \%): “Apertura económica ↔ Violencia y desequilibrios”
+
+Esta dimensión revela un eje fundamental que contrasta el nivel de apertura económica de las ciudades con ciertas condiciones sociales y demográficas. A medida que una ciudad presenta mayores niveles de internacionalización, tiende también a registrar patrones específicos tanto en su estructura poblacional como en la calidad de vida de sus habitantes.
+
+- En el extremo positivo de la dimensión se encuentran ciudades con mayor población (RH\_1 = 0{,}397) y mejores niveles de cobertura educativa, tanto en primaria/secundaria (RH\_6 = 0{,}163) como en educación superior (RH\_7 = 0{,}246). Esto sugiere que las urbes más integradas al comercio internacional no solo son más grandes, sino que también ofrecen mejores oportunidades educativas.
+
+  También se observan correlaciones positivas, aunque moderadas, con la mortalidad infantil (RH\_12 = 0{,}168) y los homicidios (RH\_15 = 0{,}169). Estos resultados podrían explicarse por el tamaño y complejidad de estas ciudades, que aunque dinámicas, enfrentan desafíos sociales propios de entornos urbanos densos.
+
+- En el polo negativo de la dimensión destacan aquellas ciudades con menores índices de violencia intrafamiliar (RH\_14 = –0{,}308), secuestros (RH\_16 = –0{,}273) y delitos contra la formación sexual (RH\_13 = –0{,}270). Esto indicaría que las ciudades más orientadas hacia los mercados globales ofrecen contextos más seguros en estos aspectos sensibles.
+
+  Además, se encuentran asociaciones negativas con la tasa de crecimiento de la población (RH\_2 = –0{,}154) y con el analfabetismo absoluto (RH\_5 = –0{,}057), lo que sugiere que las economías menos abiertas presentan un crecimiento poblacional más acelerado, pero a la vez mayores rezagos educativos.
+
+En síntesis, la Dimensión 1 no solo captura el grado de apertura y diversificación económica de las ciudades, sino que también permite distinguir entre aquellas que logran combinar su vocación exportadora con condiciones sociales más estables, seguras y con mejores niveles de educación.
+
 
 ### c) Correlaciones de variables ilustrativas
 
